@@ -80,7 +80,7 @@ module.exports = class UserController {
       return;
     }
 
-    //validar se o usuario existe
+    //check se o usuario existe
     const user = await User.findOne({ email: email });
 
     if (!user) {
@@ -88,7 +88,7 @@ module.exports = class UserController {
       return;
     }
 
-    //validação da senha do usuario
+    //check da senha do usuario
     const checkpassword = await bcrypt.compare(password, user.password);
 
     if (!checkpassword) {
