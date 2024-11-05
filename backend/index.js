@@ -15,9 +15,11 @@ app.use(express.static("public"));
 
 //Import de Routes
 const UserRoutes = require("./routes/UserRoutes");
+const ItensRouter = require("./routes/ItensRoutes");
 
 //Routes
 app.use("/users", UserRoutes);
+app.use("/itens", ItensRouter);
 
 app.listen(5000, (err) => {
   if (err) {
