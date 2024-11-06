@@ -15,6 +15,7 @@ const checkToken = (req, res, next) => {
   try {
     const verified = jwt.verify(token, "Nossosecret");
     req.user = verified;
+
     next();
   } catch (error) {
     res.status(400).json({ message: "Token invalido" });
